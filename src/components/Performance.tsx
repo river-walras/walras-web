@@ -359,10 +359,10 @@ const Performance = () => {
                 {[
                   { value: '100%', label: 'MONTHS_PROFITABLE', color: 'text-green-400' },
                   { value: '2.8x', label: 'AVG_VS_BENCHMARK', color: 'text-copper-light' },
-                  { value: '<5%', label: 'MAX_DRAWDOWN', color: 'text-gold' },
+                  { value: '3.12%', label: 'MAX_DRAWDOWN', color: 'text-gold', title: 'Peak-to-trough loss across strategies.' },
                 ].map((stat, index) => (
                   <div key={index} className="text-center border-l border-terminal-border pl-6 first:border-l-0 first:pl-0">
-                    <div className={`font-mono text-4xl sm:text-5xl mb-3 ${stat.color}`}>
+                    <div className={`font-mono text-4xl sm:text-5xl mb-3 ${stat.color}`} title={stat.title}>
                       {stat.value}
                     </div>
                     <div className="font-mono text-[10px] text-terminal-muted tracking-widest">

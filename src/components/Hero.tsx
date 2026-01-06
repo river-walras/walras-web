@@ -86,7 +86,7 @@ const Hero = () => {
               <div className="space-y-6">
                 {[
                   { icon: TrendingUp, label: 'MULTI_STRATEGY_RETURN', value: '10-70%', unit: 'ANNUAL', color: 'text-green-400' },
-                  { icon: Shield, label: 'RISK_MANAGEMENT', value: '<5%', unit: 'MAX_DRAWDOWN', color: 'text-blue-400' },
+                  { icon: Shield, label: 'RISK_MANAGEMENT', value: '3.12%', unit: 'MAX_DRAWDOWN', color: 'text-blue-400' },
                   { icon: Target, label: 'AI_PRECISION', value: '99.7%', unit: 'UPTIME', color: 'text-copper-light' },
                 ].map((stat, index) => (
                   <motion.div

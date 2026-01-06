@@ -150,6 +150,12 @@ const Services = () => {
               description = 'Commodity Trading Advisor strategy that leverages trend-following algorithms across futures markets. Designed to capture momentum in various asset classes.';
             }
 
+            const strategyMetrics = [
+              { sharpe: 3.11, maxDrawdown: 0.8 },
+              { sharpe: 2.82, maxDrawdown: 1.2 },
+              { sharpe: 2.22, maxDrawdown: 3.12 },
+            ];
+
             return (
               <motion.div
                 key={index}
@@ -200,16 +206,16 @@ const Services = () => {
                         <div className="font-mono text-[10px] text-terminal-muted tracking-widest mb-3">KEY_METRICS</div>
                         <div className="space-y-3">
                           <div className="flex justify-between items-baseline border-b border-terminal-border pb-2">
-                            <span className="font-mono text-xs text-gray-400">SHARPE_RATIO</span>
-                            <span className="font-mono text-sm text-white">{(2.5 + index * 0.3).toFixed(2)}</span>
+                            <span className="font-mono text-xs text-gray-400" title="Sharpe Ratio (risk-adjusted return).">SHARPE_RATIO</span>
+                            <span className="font-mono text-sm text-white" title="Sharpe Ratio (risk-adjusted return).">
+                              {strategyMetrics[index].sharpe.toFixed(2)}
+                            </span>
                           </div>
                           <div className="flex justify-between items-baseline border-b border-terminal-border pb-2">
-                            <span className="font-mono text-xs text-gray-400">MAX_DRAWDOWN</span>
-                            <span className="font-mono text-sm text-white">{(3 + index * 2).toFixed(1)}%</span>
-                          </div>
-                          <div className="flex justify-between items-baseline">
-                            <span className="font-mono text-xs text-gray-400">WIN_RATE</span>
-                            <span className="font-mono text-sm text-copper-light">{(68 - index * 3)}%</span>
+                            <span className="font-mono text-xs text-gray-400" title="Peak-to-trough loss, expressed as a percentage.">MAX_DRAWDOWN (%)</span>
+                            <span className="font-mono text-sm text-white" title="Peak-to-trough loss, expressed as a percentage.">
+                              {strategyMetrics[index].maxDrawdown.toFixed(2)}%
+                            </span>
                           </div>
                         </div>
                       </div>
