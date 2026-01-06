@@ -4,17 +4,14 @@ export function register() {
   }
 
   const globalAny = globalThis as typeof globalThis & {
-    localStorage?: {
-      getItem?: (key: string) => string | null;
-      setItem?: (key: string, value: string) => void;
-      removeItem?: (key: string) => void;
-      clear?: () => void;
-    };
+    localStorage?: Storage;
   };
 
   const storage = globalAny.localStorage;
   if (storage && typeof storage.getItem !== 'function') {
     globalAny.localStorage = {
+      length: 0,
+      key: () => null,
       getItem: () => null,
       setItem: () => {},
       removeItem: () => {},
