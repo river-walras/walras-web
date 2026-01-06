@@ -98,7 +98,7 @@ const Contact = () => {
 
   if (isSubmitted) {
     return (
-      <section id="contact" className="py-12 sm:py-16 lg:py-20 bg-gray-50 dark:bg-gray-800">
+      <section id="contact" className="py-20 sm:py-24 lg:py-32 bg-terminal-darker">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -107,13 +107,13 @@ const Contact = () => {
             className="text-center max-w-2xl mx-auto"
             suppressHydrationWarning
           >
-            <div className="w-20 h-20 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-6">
-              <CheckCircle className="w-10 h-10 text-green-600" />
+            <div className="w-20 h-20 border border-terminal-border rounded-full flex items-center justify-center mx-auto mb-6">
+              <CheckCircle className="w-10 h-10 text-green-400" />
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl font-serif font-light text-white mb-4">
               Thank You!
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 px-4 sm:px-0">
+            <p className="text-base sm:text-lg md:text-xl text-gray-400 mb-8 px-4 sm:px-0 font-sans">
               Your message has been sent successfully. Our team will get back to you within 24 hours.
             </p>
             <button
@@ -121,7 +121,7 @@ const Contact = () => {
                 setIsSubmitted(false);
                 setErrors({});
               }}
-              className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+              className="bg-copper hover:bg-copper-light text-white px-8 py-3 font-mono text-sm tracking-wider transition-colors"
             >
               Send Another Message
             </button>
@@ -132,7 +132,7 @@ const Contact = () => {
   }
 
   return (
-    <section id="contact" className="py-12 sm:py-16 lg:py-20 bg-gray-50 dark:bg-gray-800">
+    <section id="contact" className="py-20 sm:py-24 lg:py-32 bg-terminal-darker">
       {/* Static form for Netlify detection - hidden */}
       <form name="contact" data-netlify="true" style={{ display: 'none' }}>
         <input type="text" name="name" />
@@ -147,12 +147,16 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            Get In <span className="gradient-text">Touch</span>
+          <div className="flex items-center gap-3 mb-6">
+            <span className="font-mono text-xs text-copper-light/60 tracking-widest">CONTACT_PROTOCOL</span>
+            <div className="flex-1 h-[1px] bg-gradient-to-r from-copper-light/20 to-transparent"></div>
+          </div>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-light text-white mb-6">
+            Get In <span className="text-copper-light italic">Touch</span>
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4 sm:px-0">
+          <p className="text-base sm:text-lg text-gray-400 max-w-3xl font-sans leading-relaxed">
             Ready to maximize your crypto investments? Contact our team to discuss 
             your portfolio and explore our exclusive trading strategies.
           </p>
@@ -165,7 +169,7 @@ const Contact = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8">
+            <h3 className="text-2xl sm:text-3xl font-serif text-white mb-6 sm:mb-8">
               Contact Information
             </h3>
             
@@ -179,16 +183,16 @@ const Contact = () => {
                   viewport={{ once: true }}
                   className="flex items-start space-x-4"
                 >
-                  <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <info.icon className="w-6 h-6 text-primary-600" />
+                  <div className="w-12 h-12 border border-terminal-border flex items-center justify-center flex-shrink-0">
+                    <info.icon className="w-6 h-6 text-copper-light" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-1">
+                    <h4 className="font-mono text-xs text-terminal-muted tracking-widest mb-2">
                       {info.label}
                     </h4>
                     <a
                       href={info.href}
-                      className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                      className="text-gray-300 hover:text-copper-light transition-colors font-sans"
                     >
                       {info.value}
                     </a>
@@ -197,11 +201,11 @@ const Contact = () => {
               ))}
             </div>
 
-            <div className="bg-white dark:bg-gray-900 rounded-xl p-4 sm:p-6 shadow-lg">
-              <h4 className="font-semibold text-gray-900 dark:text-white mb-4">
+            <div className="bg-terminal-black border border-terminal-border p-4 sm:p-6 shadow-terminal">
+              <h4 className="font-serif text-xl text-white mb-4">
                 Office Hours
               </h4>
-              <div className="space-y-2 text-gray-600 dark:text-gray-300">
+              <div className="space-y-2 text-gray-400 font-sans">
                 <div className="flex justify-between">
                   <span>Monday - Friday</span>
                   <span>9:00 AM - 6:00 PM EST</span>
@@ -223,9 +227,9 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: true }}
-            className="bg-white dark:bg-gray-900 rounded-xl p-6 sm:p-8 shadow-lg"
+            className="bg-terminal-black border border-terminal-border p-6 sm:p-8 shadow-terminal"
           >
-            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6">
+            <h3 className="text-2xl sm:text-3xl font-serif text-white mb-6">
               Send us a Message
             </h3>
 
@@ -234,7 +238,7 @@ const Contact = () => {
               <input type="hidden" name="subject" value="New Contact Form Submission - Walras Research" />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label htmlFor="name" className="block text-xs font-mono text-terminal-muted tracking-widest mb-2">
                     Full Name *
                   </label>
                   <input
@@ -243,8 +247,8 @@ const Contact = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-800 dark:border-gray-600 dark:text-white transition-colors ${
-                      errors.name ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
+                    className={`w-full px-4 py-3 border bg-terminal-darker/60 text-white placeholder:text-terminal-muted focus:ring-2 focus:ring-copper-light/40 focus:border-copper-light/40 transition-colors ${
+                      errors.name ? 'border-red-500' : 'border-terminal-border'
                     }`}
                     placeholder="John Doe"
                   />
@@ -254,7 +258,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label htmlFor="email" className="block text-xs font-mono text-terminal-muted tracking-widest mb-2">
                     Email Address *
                   </label>
                   <input
@@ -263,8 +267,8 @@ const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-800 dark:border-gray-600 dark:text-white transition-colors ${
-                      errors.email ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
+                    className={`w-full px-4 py-3 border bg-terminal-darker/60 text-white placeholder:text-terminal-muted focus:ring-2 focus:ring-copper-light/40 focus:border-copper-light/40 transition-colors ${
+                      errors.email ? 'border-red-500' : 'border-terminal-border'
                     }`}
                     placeholder="john@example.com"
                   />
@@ -275,7 +279,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="company" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label htmlFor="company" className="block text-xs font-mono text-terminal-muted tracking-widest mb-2">
                   Company (Optional)
                 </label>
                 <input
@@ -284,13 +288,13 @@ const Contact = () => {
                   name="company"
                   value={formData.company}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-800 dark:text-white transition-colors"
+                  className="w-full px-4 py-3 border border-terminal-border bg-terminal-darker/60 text-white placeholder:text-terminal-muted focus:ring-2 focus:ring-copper-light/40 focus:border-copper-light/40 transition-colors"
                   placeholder="Your Company"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label htmlFor="message" className="block text-xs font-mono text-terminal-muted tracking-widest mb-2">
                   Message *
                 </label>
                 <textarea
@@ -299,8 +303,8 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={6}
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-800 dark:border-gray-600 dark:text-white transition-colors resize-none ${
-                    errors.message ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
+                  className={`w-full px-4 py-3 border bg-terminal-darker/60 text-white placeholder:text-terminal-muted focus:ring-2 focus:ring-copper-light/40 focus:border-copper-light/40 transition-colors resize-none ${
+                    errors.message ? 'border-red-500' : 'border-terminal-border'
                   }`}
                   placeholder="Tell us about your investment goals and how we can help..."
                 />
@@ -312,7 +316,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-primary-600 hover:bg-primary-700 disabled:bg-primary-400 text-white py-4 px-6 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center group"
+                className="w-full bg-copper hover:bg-copper-light disabled:bg-copper/60 text-white py-4 px-6 font-mono text-sm tracking-wider transition-all duration-300 flex items-center justify-center group"
               >
                 {isSubmitting ? (
                   <>
