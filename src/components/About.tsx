@@ -25,7 +25,7 @@ const About = () => {
             About <span className="gradient-text">Walras Research</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4 sm:px-0">
-            Founded by former quantitative researchers from leading Wall Street firms and top hedge funds, with academic advisory support from faculty at HKUST, NUS, and Yale.
+            Founded by former quantitative researchers from leading Wall Street firms and top hedge funds, with academic advisory support from faculty at PKU, HKUST, NUS, and Yale.
           </p>
         </motion.div>
 
